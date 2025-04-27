@@ -1,2 +1,48 @@
 # sapotrix
-Repositório do projeto Sapotrix
+
+Sistema de processamento e análise de imagens usando ESP32-CAM e deep learning.
+
+## Componentes
+
+### CameraWebServer
+Servidor de câmera baseado no ESP32-CAM com as seguintes funcionalidades:
+- Captura de imagens em formato JPEG/BMP
+- Streaming de vídeo
+- Controle de LED para iluminação
+- Interface HTTP para acesso às funcionalidades
+
+Hardware suportado:
+- AI-THINKER ESP32-CAM
+
+### Embeddings
+Sistema de extração de características de imagens usando deep learning:
+- Extração de features usando modelo ResNet50 pré-treinado
+- Processamento de datasets de imagens
+- Geração de embeddings para análise
+
+## Requisitos
+
+### CameraWebServer
+- ESP32-CAM
+- Arduino IDE com suporte ESP32
+
+### Embeddings
+- Python 3.x
+- TensorFlow 
+- Keras
+- NumPy
+- scikit-learn
+- tqdm
+- matplotlib
+
+## Estrutura do Projeto
+```
+.
+├── CameraWebServer/       # Componente ESP32-CAM
+│   ├── app_httpd.cpp     # Implementação do servidor HTTP
+│   ├── camera_index.h    # Interface web
+│   └── camera_pins.h     # Configuração de pins
+├── embeddings/           # Sistema de processamento de imagens
+│   ├── embeddings.py     # Extração de features
+│   └── requeriments.txt  # Dependências Python
+```
