@@ -39,18 +39,9 @@ for img_path in tqdm(image_paths):
         emb = extract_features(img_path)
         embeddings.append(emb)
 
-    # Converter para array
+    
 embeddings = np.array(embeddings)
 
-# Salvar para reutilizar depois
+
 np.save('dataset_embeddings.npy', embeddings)
 np.save('dataset_image_paths.npy', image_paths)
-
-    
-
-
-
-
-
-     
-
