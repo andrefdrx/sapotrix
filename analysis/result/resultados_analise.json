@@ -1,0 +1,17 @@
+[
+    {
+        "id": "exemplo1.png",
+        "result": false,
+        "accuracy": 0.5712
+    },
+    {
+        "id": "exemplo2.png",
+        "result": false,
+        "accuracy": 0.5386
+    },
+    {
+        "id": "exemplo3.png",
+        "result": true,
+        "accuracy": 0.7058
+    }
+]
