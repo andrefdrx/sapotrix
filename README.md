@@ -20,6 +20,12 @@ Sistema de extração de características de imagens usando deep learning:
 - Processamento de datasets de imagens
 - Geração de embeddings para análise
 
+### Analysis
+Sistema de análise de similaridade de imagens:
+- Comparação de imagens usando embeddings gerados
+- Cálculo de similaridade usando distância coseno
+- Geração de relatórios de análise em formato JSON
+
 ## Requisitos
 
 ### CameraWebServer
@@ -45,4 +51,6 @@ Sistema de extração de características de imagens usando deep learning:
 ├── embeddings/           # Sistema de processamento de imagens
 │   ├── embeddings.py     # Extração de features
 │   └── requeriments.txt  # Dependências Python
+├── analysis/            # Sistema de análise de imagens
+│   └── similarity.py    # Análise de similaridade
 ```
