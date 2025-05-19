@@ -34,12 +34,14 @@ Sistema de análise de similaridade de imagens:
 
 ### Embeddings
 - Python 3.x
-- TensorFlow 
-- Keras
-- NumPy
-- scikit-learn
-- tqdm
+- TensorFlow 2.19.0
+- Keras 3.9.2
+- NumPy 2.1.3
+- scikit-learn 1.6.1
+- tqdm 4.67.1
 - matplotlib
+- Pillow 11.2.1
+- h5py 3.13.0
 
 ## Estrutura do Projeto
 ```
