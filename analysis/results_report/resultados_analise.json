@@ -1,0 +1,27 @@
+[
+    {
+        "id": "2025-05-19_15-30-46_example4.jpeg",
+        "result": true,
+        "accuracy": 0.7235
+    },
+    {
+        "id": "2025-05-19_15-30-46_example5.jpeg",
+        "result": true,
+        "accuracy": 0.6791
+    },
+    {
+        "id": "2025-05-19_15-30-46_exemplo1.png",
+        "result": false,
+        "accuracy": 0.5712
+    },
+    {
+        "id": "2025-05-19_15-30-47_exemplo2.png",
+        "result": false,
+        "accuracy": 0.5386
+    },
+    {
+        "id": "2025-05-19_15-30-47_exemplo3.png",
+        "result": true,
+        "accuracy": 0.7058
+    }
+]

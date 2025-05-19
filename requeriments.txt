@@ -1,0 +1,8 @@
+tqdm
+tensorflow
+scikit-learn
+Pillow
+shutil
+os
+json
+numpy

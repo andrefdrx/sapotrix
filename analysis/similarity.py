@@ -1,5 +1,8 @@
 import os
 import json
+import shutil
+from datetime import datetime
+
 import numpy as np
 from tqdm import tqdm
 from sklearn.metrics.pairwise import cosine_similarity
@@ -7,59 +10,77 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
 
 
-model = ResNet50(weights='imagenet', include_top=False, pooling='avg')
+class ImageAnalyzer:
+    def __init__(self, base_dir):
+        self.base_dir = base_dir
+        self.embeddings_path = os.path.join(base_dir, "embeddings", "dataset_embeddings.npy")
+        self.image_paths_path = os.path.join(base_dir, "embeddings", "dataset_image_paths.npy")
+        self.capture_dir = os.path.join(base_dir, "analysis", "image_capture")
+        self.analyzed_dir = os.path.join(base_dir, "analysis", "image_analyzed")
+        self.report_dir = os.path.join(base_dir, "analysis", "results_report")
+        self.report_file = os.path.join(self.report_dir, "resultados_analise.json")
 
+        os.makedirs(self.analyzed_dir, exist_ok=True)
+        os.makedirs(self.report_dir, exist_ok=True)
 
-def preprocess_image(img_path, target_size=(224, 224)):
-    img = image.load_img(img_path, target_size=target_size)
-    img_array = image.img_to_array(img)
-    img_array = np.expand_dims(img_array, axis=0)
-    img_array = preprocess_input(img_array)
-    return img_array
+        self.model = ResNet50(weights='imagenet', include_top=False, pooling='avg')
+        self.embeddings = np.load(self.embeddings_path)
+        self.image_paths = np.load(self.image_paths_path, allow_pickle=True)
 
-def extract_features(img_path):
-    img = preprocess_image(img_path)
-    features = model.predict(img, verbose=0)
-    return features.flatten()
+    def preprocess_image(self, img_path, target_size=(224, 224)):
+        img = image.load_img(img_path, target_size=target_size)
+        img_array = image.img_to_array(img)
+        img_array = np.expand_dims(img_array, axis=0)
+        return preprocess_input(img_array)
 
-def find_most_similar(new_img_path, embeddings, image_paths):
-    new_emb = extract_features(new_img_path)
-    similarities = cosine_similarity([new_emb], embeddings)[0]
-    top_idx = np.argmax(similarities)
-    return image_paths[top_idx], similarities[top_idx]
+    def extract_features(self, img_path):
+        img = self.preprocess_image(img_path)
+        features = self.model.predict(img, verbose=0)
+        return features.flatten()
 
+    def find_most_similar(self, img_path):
+        new_embedding = self.extract_features(img_path)
+        similarities = cosine_similarity([new_embedding], self.embeddings)[0]
+        best_idx = np.argmax(similarities)
+        return self.image_paths[best_idx], similarities[best_idx]
 
-embeddings = np.load("dataset_embeddings.npy")
-image_paths = np.load("dataset_image_paths.npy", allow_pickle=True)
+    def load_existing_results(self):
+        if os.path.exists(self.report_file):
+            with open(self.report_file, "r") as f:
+                return json.load(f)
+        return []
 
+    def save_results(self, all_results):
+        with open(self.report_file, "w") as f:
+            json.dump(all_results, f, indent=4)
 
-test_folder = os.path.join(os.getcwd(), "analysis", "examples")
-test_images = [f for f in os.listdir(test_folder) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
+    def analyze_images(self):
+        test_images = [
+            f for f in os.listdir(self.capture_dir)
+            if f.lower().endswith(('.jpg', '.jpeg', '.png'))
+        ]
 
+        if not test_images:
+            print("Nenhuma imagem encontrada para análise.")
+            return
 
-results = []
+        existing_results = self.load_existing_results()
 
-for img_name in tqdm(test_images, desc="Analisando imagens"):
-    img_path = os.path.join(test_folder, img_name)
-    matched_path, similarity = find_most_similar(img_path, embeddings, image_paths)
+        for img_name in tqdm(test_images, desc="Analisando imagens"):
+            img_path = os.path.join(self.capture_dir, img_name)
+            matched_path, similarity = self.find_most_similar(img_path)
 
-    result = {
-        "id": img_name,
-        "result": bool(similarity >= 0.60),
-        "accuracy": round(float(similarity), 4)
-    }
-    results.append(result)
+            timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+            result = {
+                "id": f"{timestamp}_{img_name}",
+                "result": bool(similarity >= 0.60),
+                "accuracy": round(float(similarity), 4)
+            }
 
+            existing_results.append(result)
 
+            # Move image after analysis
+            shutil.move(img_path, os.path.join(self.analyzed_dir, img_name))
 
-# Salvar JSON
-save_folder = os.path.join(os.getcwd(), "analysis", "result")
-
-os.makedirs(save_folder, exist_ok=True)
-
-save_path = os.path.join(save_folder, "resultados_analise.json")
-
-with open(save_path, "w") as f:
-    json.dump(results, f, indent=4)
-
-print(f"Análise concluída. Resultados salvos em: {save_path}")
+        self.save_results(existing_results)
+        print(f"\nAnálise concluída. Resultados salvos em: {self.report_file}")
