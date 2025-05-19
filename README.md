@@ -56,3 +56,33 @@ Sistema de análise de similaridade de imagens:
 ├── analysis/            # Sistema de análise de imagens
 │   └── similarity.py    # Análise de similaridade
 ```
+
+
+## Instalação e Execução
+
+### 1. Crie e ative o ambiente virtual
+
+#### Windows
+```
+python -m venv venv
+venv\Scripts\activate
+```
+
+### Linux/macOS
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+## 2. Instale as dependências
+```
+pip install -r requirements.txt
+```
+
+## 4. Execute o sistema
+```
+python main.py
+```
+
+### OBS:
+- As imagens que passarão por analise precisar estar salvas na pasta "analysis\image_capture"
