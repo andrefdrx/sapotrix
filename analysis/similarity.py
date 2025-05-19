@@ -61,26 +61,40 @@ class ImageAnalyzer:
         ]
 
         if not test_images:
-            print("Nenhuma imagem encontrada para análise.")
-            return
+            return [{
+                "id": "",
+                "vector": "",
+                "codestatus": 204
+            }]
 
         existing_results = self.load_existing_results()
+        current_results = []
 
         for img_name in tqdm(test_images, desc="Analisando imagens"):
             img_path = os.path.join(self.capture_dir, img_name)
             matched_path, similarity = self.find_most_similar(img_path)
 
             timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+            image_id = f"{img_name}_{timestamp}"
+            is_similar = similarity >= 0.60
+
             result = {
-                "id": f"{timestamp}_{img_name}",
-                "result": bool(similarity >= 0.60),
+                "id": image_id,
+                "result": bool(is_similar),
                 "accuracy": round(float(similarity), 4)
             }
-
             existing_results.append(result)
 
-            # Move image after analysis
+            # Resultado para retorno imediato
+            current_results.append({
+                "id": image_id,
+                "vector": "VECTOR" if is_similar else "NVECTOR",
+                "codestatus": 200
+            })
+
+            # Move imagem
             shutil.move(img_path, os.path.join(self.analyzed_dir, img_name))
 
         self.save_results(existing_results)
-        print(f"\nAnálise concluída. Resultados salvos em: {self.report_file}")
+        #print(f"\nAnálise concluída. Resultados salvos em: {self.report_file}")
+        return current_results
