@@ -1,6 +1,7 @@
 # Sapotrix
 
-![Sapotrix](https://github.com/user-attachments/assets/7cae635f-6577-4876-9067-9be4124b7d6e)
+
+![Sapotrix](https://github.com/user-attachments/assets/20f852df-4862-4904-90a8-bdeff0c2bbca)
 
 
 Sistema de processamento e análise de imagens usando ESP32-CAM e deep learning.
