@@ -6,7 +6,9 @@
 
 Sistema de processamento e análise de imagens usando ESP32-CAM e deep learning.
 
-
+Aplicação com o objetivo da detecção e análise de mosquitos _Aedes Aegypti_, assim como sua eliminação. Uso de processamento e análise de imagem para identificação de insetos, permitindo a livre passagem de espécies diferentes do _Aedes Aegypti_.
+ 
+Os dados analisados e coletados tem o propósito de apoiar ações preventivas e melhorar estratégias de combate já existentes referente ao mosquito _Aedes Aegypti_. Após a detecção, os dados são enviados a um servidor remoto por meio do módulo ESP32 LoRa.
 
 ## Componentes
 
