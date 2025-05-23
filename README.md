@@ -4,14 +4,41 @@
   <img src="https://github.com/user-attachments/assets/d0a6df97-147d-4331-b3b9-9aeb189af21c" />
 </p>
 
-Sistema de processamento e análise de imagens usando ESP32-CAM e deep learning.
+##### Conteúdo
+- [Introdução](#intro)
+- [Objetivos](#obj)
+- [Componentes](#componentes)
+  * [CameraWebServer](#cam)
+  * [Embeddings](#embeddings)
+  * [Analysis](#analysis)
+- [Requisitos](#req)
+  * [CameraWebServer](#camreq)
+  * [Embeddings](#embreq)
+- [Estrutura do Projeto](#estrutura)
+- [Instalação e Execução](#install)
+- [Colaboradores](#colab)
 
-Aplicação com o objetivo da detecção e análise de mosquitos _Aedes Aegypti_, assim como sua eliminação. Uso de processamento e análise de imagem para identificação de insetos, permitindo a livre passagem de espécies diferentes do _Aedes Aegypti_.
- 
-Os dados analisados e coletados tem o propósito de apoiar ações preventivas e melhorar estratégias de combate já existentes referente ao mosquito _Aedes Aegypti_. Após a detecção, os dados são enviados a um servidor remoto por meio do módulo ESP32 LoRa.
 
+<a name="intro"></a>
+## Introdução
+
+Projeto usando a plataforma IOT com o objetivo de automatizar a coleta de dados e eliminação de insetos do gênero _Aedes_. Com o uso e implementação de recursos da "Internet das coisas", essa solução é aplicada a armadilha de insetos do gênero _Aedes_, sendo acoplada a uma lixeira equipada com uma porta de coleta de lixo com acionamento automático.
+
+A armadilha, com objetivo de atrair os mosquitos _Aedes aegypti_, é equipada com os seguintes componentes: atrativo químico olfativo, luz de cor vermelha, ciano e laranja, água e base de oviposição. Também é equipada com sensores responsáveis pela coleta e análise de dados dos insetos atraídos e uma câmera para permitir o processamento de imagens, esses componentes estão descritos nas seções encontradas abaixo.
+
+Sobre a questão da eliminação do inseto, assim que identificado como _Aedes aegypti_, é usado um sistema físico e relativamente simples: um jato de água. Esse sistema é ativado logo após ser finalizada a coleta de dados e sua análise correta.
+
+Os dados coletados são enviados a um servidor remoto para seu armazenamento e futura análise usando um módulo ESP32 LoRa, de forma a permitir a trasmissão de dados por uma longa distância, através do protocolo LoRaWAN. Essa transmissão possibilita a implantação da armadilha em localizações remotas e de forma com que os dados sejam obtidos de forma automatizada.
+
+A identificação correta do inseto é realizada através do processamento e reconhecimento de imagens obtidas pela câmera.
+
+<a name="obj"></a>
+### Objetivos
+
+<a name="componentes"></a>
 ## Componentes
 
+<a name="cam"></a>
 ### CameraWebServer
 Servidor de câmera baseado no ESP32-CAM com as seguintes funcionalidades:
 - Captura de imagens em formato JPEG/BMP
@@ -22,24 +49,30 @@ Servidor de câmera baseado no ESP32-CAM com as seguintes funcionalidades:
 Hardware suportado:
 - AI-THINKER ESP32-CAM
 
+
+<a name="embeddings"></a>
 ### Embeddings
 Sistema de extração de características de imagens usando deep learning:
 - Extração de features usando modelo ResNet50 pré-treinado
 - Processamento de datasets de imagens
 - Geração de embeddings para análise
 
+<a name="analysis"></a>
 ### Analysis
 Sistema de análise de similaridade de imagens:
 - Comparação de imagens usando embeddings gerados
 - Cálculo de similaridade usando distância coseno
 - Geração de relatórios de análise em formato JSON
 
+<a name="req"></a>
 ## Requisitos
 
+<a name="camreq"></a>
 ### CameraWebServer
 - ESP32-CAM
 - Arduino IDE com suporte ESP32
 
+<a name="embreq"></a>
 ### Embeddings
 - Python 3.x
 - TensorFlow 2.19.0
@@ -51,6 +84,7 @@ Sistema de análise de similaridade de imagens:
 - Pillow 11.2.1
 - h5py 3.13.0
 
+<a name="estrutura"></a>
 ## Estrutura do Projeto
 ```
 .
@@ -65,7 +99,7 @@ Sistema de análise de similaridade de imagens:
 │   └── similarity.py    # Análise de similaridade
 ```
 
-
+<a name="install"></a>
 ## Instalação e Execução
 
 ### 1. Crie e ative o ambiente virtual
@@ -94,3 +128,16 @@ python main.py
 
 ### OBS:
 - As imagens que passarão por analise precisar estar salvas na pasta "analysis\image_capture"
+
+
+<a name="colab"></a>
+##Colaboradores
+
+Adriano Rocha -
+André Reis -
+Bernardo Santos -
+César Barbosa -
+Rafael Soares -
+Rafael Yasuda -
+Rodeval Silva -
+Thiago Santana -
