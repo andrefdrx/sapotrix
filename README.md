@@ -131,13 +131,20 @@ python main.py
 
 
 <a name="colab"></a>
-##Colaboradores
+## Colaboradores
 
-Adriano Rocha -
-André Reis -
-Bernardo Santos -
-César Barbosa -
-Rafael Soares -
-Rafael Yasuda -
-Rodeval Silva -
-Thiago Santana -
+Adriano Rocha
+
+André Reis
+
+Bernardo Santos
+
+César Barbosa
+
+Rafael Soares
+
+Rafael Yasuda
+
+Rodeval Silva
+
+Thiago Santana
