@@ -33,7 +33,7 @@ Os dados coletados são enviados a um servidor remoto para seu armazenamento e f
 A identificação correta do inseto é realizada através do processamento e reconhecimento de imagens obtidas pela câmera.
 
 <a name="obj"></a>
-### Objetivos
+## Objetivos
 
 <a name="componentes"></a>
 ## Componentes
