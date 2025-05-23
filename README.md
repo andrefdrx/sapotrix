@@ -135,16 +135,16 @@ python main.py
 
 Adriano Rocha
 
-André Reis
+<a href="https://github.com/andrefdrx" target="_blank" style="color: #2f2d2d; text-decoration: underline;">André Reis</a>
 
-Bernardo Santos
+<a href="https://github.com/belima93" target="_blank" style="color: #2f2d2d; text-decoration: underline;">Bernardo Santos</a>
 
 César Barbosa
 
-Rafael Soares
+<a href="https://github.com/Rafael-Soares-Dev" target="_blank" style="color: #2f2d2d; text-decoration: underline;">Rafael Soares</a>
 
 Rafael Yasuda
 
 Rodeval Silva
 
-Thiago Santana
+<a href="https://github.com/falkez" target="_blank" style="color: #2f2d2d; text-decoration: underline;">Thiago Santana</a>
