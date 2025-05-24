@@ -33,12 +33,9 @@ Os dados coletados são enviados a um servidor remoto para seu armazenamento e f
 A identificação correta do inseto é realizada através do processamento e reconhecimento de imagens obtidas pela câmera.
 
 <a name="obj"></a>
-## Objetivos
+* ## Objetivos
 
-Objetivo Geral
-Desenvolver uma armadilha e lixeira inteligente IOT para a coleta de dados e eliminação de insetos alados do gênero Aedes.
-
-Objetivos Específicos
+• Desenvolver uma armadilha e lixeira inteligente IOT para a coleta de dados e eliminação de insetos alados do gênero Aedes.
 • Desenvolver uma estrutura para coleta e armazenamento de lixo com porta coletora que permaneça sempre fechada.
 • Desenvolver uma estrutura para instalação de sistema eliminador de insetos alados que permaneça próxima ao chão.
 • Desenvolver um sistema de acoplamento da estrutura coletora e da estrutura do sistema eliminador.
@@ -48,9 +45,8 @@ Objetivos Específicos
 • Implementar eletrônica de controle e de Internet das Coisas.
 
 <a name="Cont"></a>
-## Contexto
+* ## Contexto
 
-Contexto
 O avanço de doenças transmitidas por vetores como o mosquito Aedes aegypti, causador de dengue, zika e chikungunya, continua sendo um dos principais desafios de saúde pública no Brasil. Esse cenário demanda soluções tecnológicas inovadoras, que possam auxiliar no monitoramento e combate desses vetores de forma eficiente e acessível. O uso de dispositivos com tecnologia IoT (Internet das Coisas) surge como uma alternativa promissora nesse contexto, ao permitir a integração entre sensores, sistemas de análise de dados e atuação em tempo real.
 Este projeto propõe o desenvolvimento de um dispositivo IoT capaz de atrair, capturar, analisar e eliminar insetos alados do gênero Aedes. O sistema será capaz de coletar dados como quantidade de mosquitos, localização e características específicas da espécie, permitindo sua posterior análise. Com isso, busca-se oferecer uma solução inteligente, que apoie tanto ações preventivas quanto estratégias de combate já existentes. 
 O projeto será desenvolvido com foco em áreas urbanas, com incidência conhecida de doenças transmitidas por vetores alados. A atuação será baseada em um único protótipo funcional, dimensionado para monitorar uma área equivalente a um bairro. O problema que norteia a proposta é: Como utilizar tecnologias de IoT para aprimorar dispositivos de captura e eliminação de vetores alados, fornecendo dados úteis e soluções eficazes para o combate a doenças em ambientes urbanos?
