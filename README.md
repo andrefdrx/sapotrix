@@ -33,19 +33,19 @@ Os dados coletados são enviados a um servidor remoto para seu armazenamento e f
 A identificação correta do inseto é realizada através do processamento e reconhecimento de imagens obtidas pela câmera.
 
 <a name="obj"></a>
-* ## Objetivos
+## Objetivos
 
-• Desenvolver uma armadilha e lixeira inteligente IOT para a coleta de dados e eliminação de insetos alados do gênero Aedes.
-• Desenvolver uma estrutura para coleta e armazenamento de lixo com porta coletora que permaneça sempre fechada.
-• Desenvolver uma estrutura para instalação de sistema eliminador de insetos alados que permaneça próxima ao chão.
-• Desenvolver um sistema de acoplamento da estrutura coletora e da estrutura do sistema eliminador.
-• Desenvolver um sistema para o transporte de gases entre a estrutura coletora e a do sistema eliminador.
-• Implementar e desenvolver um algoritmo de reconhecimento de imagem para a detecção de insetos do gênero Aedes.
-• Implementar um sistema hidráulico de esguicho movido por uma bomba elétrica de água.
-• Implementar eletrônica de controle e de Internet das Coisas.
+* • Desenvolver uma armadilha e lixeira inteligente IOT para a coleta de dados e eliminação de insetos alados do gênero Aedes.
+* • Desenvolver uma estrutura para coleta e armazenamento de lixo com porta coletora que permaneça sempre fechada.
+* • Desenvolver uma estrutura para instalação de sistema eliminador de insetos alados que permaneça próxima ao chão.
+* • Desenvolver um sistema de acoplamento da estrutura coletora e da estrutura do sistema eliminador.
+* • Desenvolver um sistema para o transporte de gases entre a estrutura coletora e a do sistema eliminador.
+* • Implementar e desenvolver um algoritmo de reconhecimento de imagem para a detecção de insetos do gênero Aedes.
+* • Implementar um sistema hidráulico de esguicho movido por uma bomba elétrica de água.
+* • Implementar eletrônica de controle e de Internet das Coisas.
 
 <a name="Cont"></a>
-* ## Contexto
+## Contexto
 
 O avanço de doenças transmitidas por vetores como o mosquito Aedes aegypti, causador de dengue, zika e chikungunya, continua sendo um dos principais desafios de saúde pública no Brasil. Esse cenário demanda soluções tecnológicas inovadoras, que possam auxiliar no monitoramento e combate desses vetores de forma eficiente e acessível. O uso de dispositivos com tecnologia IoT (Internet das Coisas) surge como uma alternativa promissora nesse contexto, ao permitir a integração entre sensores, sistemas de análise de dados e atuação em tempo real.
 Este projeto propõe o desenvolvimento de um dispositivo IoT capaz de atrair, capturar, analisar e eliminar insetos alados do gênero Aedes. O sistema será capaz de coletar dados como quantidade de mosquitos, localização e características específicas da espécie, permitindo sua posterior análise. Com isso, busca-se oferecer uma solução inteligente, que apoie tanto ações preventivas quanto estratégias de combate já existentes. 
