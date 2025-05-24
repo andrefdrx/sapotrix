@@ -35,14 +35,14 @@ A identificação correta do inseto é realizada através do processamento e rec
 <a name="obj"></a>
 ## Objetivos
 
-* • Desenvolver uma armadilha e lixeira inteligente IOT para a coleta de dados e eliminação de insetos alados do gênero Aedes.
-* • Desenvolver uma estrutura para coleta e armazenamento de lixo com porta coletora que permaneça sempre fechada.
-* • Desenvolver uma estrutura para instalação de sistema eliminador de insetos alados que permaneça próxima ao chão.
-* • Desenvolver um sistema de acoplamento da estrutura coletora e da estrutura do sistema eliminador.
-* • Desenvolver um sistema para o transporte de gases entre a estrutura coletora e a do sistema eliminador.
-* • Implementar e desenvolver um algoritmo de reconhecimento de imagem para a detecção de insetos do gênero Aedes.
-* • Implementar um sistema hidráulico de esguicho movido por uma bomba elétrica de água.
-* • Implementar eletrônica de controle e de Internet das Coisas.
+* Desenvolver uma armadilha e lixeira inteligente IOT para a coleta de dados e eliminação de insetos alados do gênero Aedes.
+* Desenvolver uma estrutura para coleta e armazenamento de lixo com porta coletora que permaneça sempre fechada.
+* Desenvolver uma estrutura para instalação de sistema eliminador de insetos alados que permaneça próxima ao chão.
+* Desenvolver um sistema de acoplamento da estrutura coletora e da estrutura do sistema eliminador.
+* Desenvolver um sistema para o transporte de gases entre a estrutura coletora e a do sistema eliminador.
+* Implementar e desenvolver um algoritmo de reconhecimento de imagem para a detecção de insetos do gênero Aedes.
+* Implementar um sistema hidráulico de esguicho movido por uma bomba elétrica de água.
+* Implementar eletrônica de controle e de Internet das Coisas.
 
 <a name="Cont"></a>
 ## Contexto
